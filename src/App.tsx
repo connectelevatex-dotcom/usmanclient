@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Circle, Hexagon, Triangle, Square, Plus, X, Rocket, Menu } from 'lucide-react';
+import { ArrowRight, Circle, Hexagon, Triangle, Plus, X, Rocket, Menu } from 'lucide-react';
 import PricingSection from './components/PricingSection';
 import ClientsSection from './components/ClientsSection';
 import ScrollProgress from './components/ScrollProgress';
@@ -102,71 +102,44 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen">
-        <div ref={parallaxRef} className="absolute inset-0 pointer-events-none">
+      <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16 px-4 sm:px-6">
+        <div ref={parallaxRef} className="absolute inset-0 pointer-events-none overflow-hidden">
           <Circle className="absolute top-20 left-20 w-24 h-24 text-[#0A1931] opacity-20 animate-float" />
-          <Square className="absolute top-40 left-48 w-16 h-16 text-[#6B4CE6] opacity-15 animate-float-delayed" />
           <Plus className="absolute top-96 left-12 w-12 h-12 text-[#FFD700] opacity-10 animate-float" />
           <Triangle className="absolute bottom-32 left-36 w-20 h-20 text-[#0A1931] opacity-15 animate-float-delayed" />
           <Hexagon className="absolute top-40 right-32 w-32 h-32 text-[#FFD700] opacity-10 animate-float" />
-          <Circle className="absolute top-80 right-20 w-16 h-16 text-[#6B4CE6] opacity-15 animate-float-delayed" />
           <X className="absolute bottom-48 right-40 w-12 h-12 text-[#0A1931] opacity-20 animate-float" />
-          <Square className="absolute top-1/4 left-1/2 w-20 h-20 text-[#6B4CE6] opacity-10 animate-float" />
-          <Plus className="absolute bottom-1/4 left-1/2 w-16 h-16 text-[#FFD700] opacity-15 animate-float-delayed" />
         </div>
 
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full min-h-screen items-center pt-24 lg:pt-0">
-            <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-                <span className="text-white">Transform Your Business</span>{' '}
-                <span className="text-[#FFD700]">Through Growth</span>
-              </h1>
-              
-              <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed animate-fade-in-delayed">
-                Scale your customer base with data-driven strategies and proven growth frameworks.
-              </p>
-
-              <div className="flex justify-center lg:justify-start mt-8 animate-fade-in-delayed-2">
-                <button className="group px-8 py-4 bg-gradient-to-r from-[#FFD700] to-[#FFC000] rounded-full text-black font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#FFD700]/30 hover:scale-105 flex items-center gap-3 animate-jiggle">
-                  Get Started
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </div>
-
-            <div className="relative hidden lg:block lg:pt-24">
-              <div className="relative w-[280px] mx-auto aspect-[9/16] rounded-[2.5rem] border-8 border-[#1a1a1a] bg-black shadow-2xl overflow-hidden">
-                <video 
-                  className="w-full h-full object-cover"
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                >
-                  <source src="https://player.vimeo.com/external/459389137.sd.mp4?s=2b3f1c2e57d2d3f20949b0e7a2411abe925c6789&profile_id=165" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                
-                <div className="absolute top-0 w-1/2 h-6 bg-[#1a1a1a] left-1/2 -translate-x-1/2 rounded-b-2xl"></div>
-              </div>
-            </div>
-
-            {/* Mobile Video Player */}
-            <div className="lg:hidden relative w-[240px] mx-auto aspect-[9/16] rounded-[2rem] border-8 border-[#1a1a1a] bg-black shadow-2xl overflow-hidden">
-              <video 
+        <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center gap-10">
+          {/* Horizontal Video */}
+          <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(255,215,0,0.08)] animate-fade-in">
+            <div className="w-full aspect-video bg-black">
+              <video
                 className="w-full h-full object-cover"
-                autoPlay 
-                loop 
-                muted 
+                autoPlay
+                loop
+                muted
                 playsInline
               >
                 <source src="https://player.vimeo.com/external/459389137.sd.mp4?s=2b3f1c2e57d2d3f20949b0e7a2411abe925c6789&profile_id=165" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              
-              <div className="absolute top-0 w-1/2 h-4 bg-[#1a1a1a] left-1/2 -translate-x-1/2 rounded-b-xl"></div>
             </div>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center leading-tight animate-fade-in-delayed">
+            <span className="text-white">Transform Your Business </span>
+            <span className="text-[#FFD700]">Through Growth</span>
+          </h1>
+
+          {/* CTA Button */}
+          <div className="animate-fade-in-delayed-2">
+            <button className="group px-10 py-4 bg-gradient-to-r from-[#FFD700] to-[#FFC000] rounded-full text-black font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#FFD700]/30 hover:scale-105 flex items-center gap-3 animate-jiggle">
+              Book a Call
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
       </section>
