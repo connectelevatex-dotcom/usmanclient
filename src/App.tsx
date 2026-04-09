@@ -130,8 +130,8 @@ function App() {
 
           {/* Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center leading-tight animate-fade-in-delayed">
-            <span className="text-white">Transform Your Business </span>
-            <span className="text-[#FFD700]">Through Growth</span>
+            <span className="text-white">Scale Your Business With </span>
+            <span className="text-[#FFD700]">Data-Driven High Quality Ads</span>
           </h1>
 
           {/* CTA Button */}
