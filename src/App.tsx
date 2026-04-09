@@ -113,7 +113,7 @@ function App() {
 
         <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center gap-10">
           {/* Horizontal Video */}
-          <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(255,215,0,0.08)] animate-fade-in">
+          <div className="w-full max-w-3xl rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(255,215,0,0.08)] animate-fade-in">
             <div className="w-full aspect-video bg-black">
               <video
                 className="w-full h-full object-cover"
