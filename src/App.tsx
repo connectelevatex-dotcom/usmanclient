@@ -6,6 +6,7 @@ import ScrollProgress from './components/ScrollProgress';
 import WorkSection from './components/WorkSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import FAQSection from './components/FAQSection';
+import ExplainerVideoAds from './components/ExplainerVideoAds';
 import Footer from './components/Footer';
 
 function App() {
@@ -146,7 +147,10 @@ function App() {
 
       {/* Clients Section */}
       <ClientsSection />
-      
+
+      {/* Explainer Video Ads Section */}
+      <ExplainerVideoAds />
+
       {/* Work Section */}
       <section id="work">
         <WorkSection />
