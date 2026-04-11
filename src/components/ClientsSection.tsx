@@ -7,6 +7,15 @@ const ClientsSection = () => {
     { number: '16+', label: 'Average ROAS' }
   ];
 
+  const logos = [
+    { id: 1, name: 'Brand 1' },
+    { id: 2, name: 'Brand 2' },
+    { id: 3, name: 'Brand 3' },
+    { id: 4, name: 'Brand 4' },
+    { id: 5, name: 'Brand 5' },
+    { id: 6, name: 'Brand 6' },
+  ];
+
   return (
     <section className="relative bg-black pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-radial from-purple-900/5 via-black to-black" />
@@ -17,20 +26,38 @@ const ClientsSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-center">
-          {/* Left Side - Geometric Shapes */}
-          <div className="flex items-center justify-center">
-            <div className="relative w-full h-96 flex items-center justify-center">
-              {/* Circle */}
-              <div className="absolute w-32 h-32 rounded-full bg-gradient-to-br from-white/10 to-white/5 opacity-70 animate-float" />
+          {/* Left Side - Logo Marquees */}
+          <div className="flex flex-col items-center justify-center gap-12">
+            {/* Top Row - Right to Left */}
+            <div className="w-full overflow-hidden">
+              <div className="flex gap-8 animate-marquee-rtl">
+                {[...logos, ...logos].map((logo, index) => (
+                  <div
+                    key={`top-${index}`}
+                    className="flex-shrink-0 w-32 h-24 rounded-lg bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center hover:border-white/20 hover:from-white/15 hover:to-white/10 transition-all duration-300 cursor-pointer"
+                  >
+                    <div className="text-center text-white/70 text-sm font-medium">
+                      {logo.name}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-              {/* Rectangle */}
-              <div className="absolute w-48 h-24 bg-gradient-to-r from-white/15 to-white/8 opacity-60 rounded-lg animate-float-delayed transform -rotate-12 -left-8 top-12" />
-
-              {/* Small Circle */}
-              <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-white/8 to-white/4 opacity-75 bottom-20 right-12 animate-float" />
-
-              {/* Large Rectangle */}
-              <div className="absolute w-40 h-40 bg-gradient-to-br from-white/12 to-white/5 opacity-50 rounded-xl animate-float-delayed transform rotate-6 -right-16 -bottom-12" />
+            {/* Bottom Row - Left to Right */}
+            <div className="w-full overflow-hidden">
+              <div className="flex gap-8 animate-marquee-ltr">
+                {[...logos, ...logos].map((logo, index) => (
+                  <div
+                    key={`bottom-${index}`}
+                    className="flex-shrink-0 w-32 h-24 rounded-lg bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center hover:border-white/20 hover:from-white/15 hover:to-white/10 transition-all duration-300 cursor-pointer"
+                  >
+                    <div className="text-center text-white/70 text-sm font-medium">
+                      {logo.name}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

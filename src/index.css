@@ -45,6 +45,14 @@
     animation: slideDown 30s linear infinite;
   }
 
+  .animate-marquee-rtl {
+    animation: marqueeRTL 30s linear infinite;
+  }
+
+  .animate-marquee-ltr {
+    animation: marqueeLTR 30s linear infinite;
+  }
+
   .backface-hidden {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -124,6 +132,24 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes marqueeRTL {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeLTR {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
